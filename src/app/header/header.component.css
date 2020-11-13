@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  background-color: #582841;
+  height: 75px;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  color: white;
+}
+.branding {
+  height: 40px;
+  width: 40px;
+}
+.nav-bar {
+  justify-content: space-evenly;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}
