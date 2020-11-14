@@ -1,5 +1,9 @@
 <div class="search-container">
-  <form class="searchForm">
+  <form
+    class="searchForm"
+    #searchForm="ngForm"
+    (ngSubmit)="getSearchTerm(searchForm)"
+  >
     <label for="searchTerm"></label>
     <input
       class="border-gradient-purple"
