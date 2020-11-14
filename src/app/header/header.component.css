@@ -1,21 +1,30 @@
+.branding {
+  height: 120px;
+  width: 120px;
+  margin-left: 20px;
+}
 .header {
   display: flex;
-  background-color: #582841;
-  height: 75px;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .nav-list {
-  display: flex;
   list-style: none;
-  color: white;
-}
-.branding {
-  height: 40px;
-  width: 40px;
-}
-.nav-bar {
-  justify-content: space-evenly;
+  display: flex;
 }
 .link {
   text-decoration: none;
-  color: white;
+  padding: 10px;
+  color: black;
+}
+.home-icon {
+  height: 20px;
+  width: 20px;
+}
+.favorite-icon {
+  height: 20px;
+  width: 20px;
 }
