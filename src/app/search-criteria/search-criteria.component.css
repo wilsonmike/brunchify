@@ -1,0 +1,62 @@
+.search-container {
+  background-image: url(https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+}
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  padding: 30px;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 25px;
+}
+.checkboxes {
+  display: flex;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border-width: 5pt;
+  border-image-slice: 1;
+  border-radius: 5px;
+  height: 30px;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #743ad5;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border-width: 4pt;
+  border-image-slice: 1;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+.get-recipes-btn {
+  background: linear-gradient(to left, #743ad5, #d53a9d);
+  color: white;
+  font-weight: bold;
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-radius: 25px;
+  align-self: center;
+  margin-top: 15px;
+}
