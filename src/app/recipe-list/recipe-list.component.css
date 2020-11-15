@@ -14,3 +14,23 @@
   font-size: 14px;
   font-weight: bold;
 }
+.recipe-show {
+  background: linear-gradient(to left, #743ad5, #d53a9d);
+  color: white;
+  font-weight: bold;
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-radius: 25px;
+  align-self: center;
+  margin-top: 15px;
+  outline: none;
+}
+.recipe-show:active:focus {
+  border: none;
+}
+
+.recipe-show img {
+  height: 15px;
+  width: 15px;
+}
