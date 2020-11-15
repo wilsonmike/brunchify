@@ -1,2 +1,15 @@
-<app-search-criteria> </app-search-criteria>
-<div *ngFor="let recipe of recipes">{{ recipe.label }}</div>
+<app-header></app-header>
+<app-search-criteria (submitEvent)="search($event)"> </app-search-criteria>
+<div class="recipe">
+  <div class="recipe-card" *ngFor="let recipe of recipes">
+    <p class="recipe-title">{{ recipe.label }}</p>
+    <img
+      class="food-image"
+      src="{{ recipe.image }}"
+      alt=""
+      title="{{ recipe.label }}"
+    />
+  </div>
+</div>
+
+<app-footer></app-footer>
