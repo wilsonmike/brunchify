@@ -1,5 +1,6 @@
 <app-header></app-header>
-<app-search-criteria (submitEvent)="search($event)"> </app-search-criteria>
+<app-search-criteria (submitEvent)="search($event.searchTerm, $event.calories)">
+</app-search-criteria>
 <app-card
   *ngFor="let recipe of recipeData?.hits"
   [recipeRef]="recipe"

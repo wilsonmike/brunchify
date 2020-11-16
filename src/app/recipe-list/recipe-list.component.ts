@@ -11,6 +11,7 @@ export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
   index: number;
   recipeData: any;
+  cal: string = '';
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -20,6 +21,10 @@ export class RecipeListComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((response) => {
       let queryParams = response;
+      console.log(queryParams);
+      let calories = queryParams.get('calories');
+      let term = queryParams.get('term');
+
       if (queryParams.get('term') === null) {
         this.recipeService.getRecipes().subscribe((response) => {
           this.recipeData = response;
@@ -27,7 +32,7 @@ export class RecipeListComponent implements OnInit {
         });
       } else {
         this.recipeService
-          .getRecipeSearch(queryParams.get('term'))
+          .getRecipeSearch(term, calories)
           .subscribe((response) => {
             this.recipeData = response;
             console.log(this.recipeData);
@@ -46,14 +51,14 @@ export class RecipeListComponent implements OnInit {
   //     });
   // }
 
-  search = (term: string) => {
+  search = (term: string, cal: string) => {
     this.router.navigate([`/recipe-list`], {
       queryParams: {
         term: term,
+        calories: cal,
       },
     });
     console.log(term);
+    console.log(cal);
   };
-  //
-  isShow = false;
 }
