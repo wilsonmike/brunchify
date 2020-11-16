@@ -13,6 +13,16 @@
       placeholder="What are you in the mood for? Search recipes!"
       ngModel
     />
+    <p>Max Calories per Serving</p>
+    <input
+      type="range"
+      min="100"
+      max="2000"
+      name="rangeInput"
+      oninput="this.nextElementSibling.value = this.value"
+      ngModel
+    />
+    <output></output>
     <p>Dietary Restrictions</p>
     <div class="checkboxes">
       <input
