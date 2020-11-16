@@ -1,4 +1,11 @@
-<div class="recipe-box">
-  <p>Recipe Card</p>
-  <button>Heart</button>
+<div class="recipe">
+  <div class="recipe-card">
+    <p>{{ recipeRef.label }}</p>
+    <img src="{{ recipeRef.image }}" alt="Food Image" />
+    <p>{{ recipeRef.ingredientLines }}</p>
+    <button class="recipe-show">
+      <img class="shopping-icon" src="assets/shopping-list.svg" alt="" /> Get
+      Recipe
+    </button>
+  </div>
 </div>

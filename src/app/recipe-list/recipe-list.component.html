@@ -1,27 +1,4 @@
 <app-header></app-header>
 <app-search-criteria (submitEvent)="search($event)"> </app-search-criteria>
-<div class="recipe">
-  <div class="recipe-card" *ngFor="let recipe of recipes; let i = index">
-    <div
-      *ngFor="let item of recipe.ingredientLines; let lastItem = last"
-      [hidden]="!isShow"
-    >
-      <span>{{ item }}</span
-      ><span *ngIf="!lastItem">,</span>
-    </div>
-    <p class="recipe-title">{{ recipe.label }}</p>
-    <img
-      [hidden]="isShow"
-      class="food-image"
-      src="{{ recipe.image }}"
-      alt=""
-      title="{{ recipe.label }}"
-    />
-    <button class="recipe-show" (click)="toggleDisplay(i)">
-      <img class="shopping-icon" src="assets/shopping-list.svg" alt="" /> Get
-      Recipe
-    </button>
-  </div>
-</div>
-
+<app-card *ngFor="let recipe of recipeData" [recipeRef]="recipe"></app-card>
 <app-footer></app-footer>

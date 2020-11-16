@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
   index: number;
+  recipeData: any;
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -22,7 +23,8 @@ export class RecipeListComponent implements OnInit {
       .getRecipes()
       .subscribe((recipeResponse: RecipeResponse) => {
         this.recipes = recipeResponse.hits.map((hit: Hit) => hit.recipe);
-        console.log(this.recipes);
+        this.recipeData = recipeResponse.hits.map((hit: Hit) => hit.recipe);
+        console.log(this.recipeData);
       });
   }
   //
