@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
+  index: number;
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -24,7 +25,6 @@ export class RecipeListComponent implements OnInit {
         console.log(this.recipes);
       });
   }
-
   //
   search = (term: string) => {
     this.router.navigate([`/recipe-list`], {
@@ -34,4 +34,14 @@ export class RecipeListComponent implements OnInit {
     });
     console.log(term);
   };
+  //
+  isShow = false;
+  toggleDisplay(index: number) {
+    if (index === index) {
+      this.isShow = !this.isShow;
+    } else {
+      this.isShow = this.isShow;
+    }
+    console.log(index);
+  }
 }
