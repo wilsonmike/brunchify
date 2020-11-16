@@ -25,7 +25,7 @@ export class RecipeService {
         app_key: API_KEY,
         app_id: APP_ID,
         q: 'brunch ' + term,
-        calories: 'calories = 100-1000',
+        // calories: 'calories = 100-1000',
       },
     });
   };
