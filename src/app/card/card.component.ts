@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Favorite, Recipe } from '../interfaces/recipe';
 
 @Component({
   selector: 'app-card',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() recipeRef: any;
+  @Output() heartEvent = new EventEmitter<Recipe>();
   constructor() {}
 
   ngOnInit(): void {
@@ -23,5 +25,15 @@ export class CardComponent implements OnInit {
     return Math.round(
       this.recipeRef.recipe.calories / this.recipeRef.recipe.yield
     );
+  };
+  toggleFavorite = (recipe: Favorite) => {
+    let favorite: Favorite = {
+      label: recipe.label,
+      image: recipe.image,
+      uri: recipe.uri,
+      favorite: true,
+    };
+    this.heartEvent.emit(favorite);
+    console.log(favorite);
   };
 }

@@ -1,2 +1,7 @@
 <app-header></app-header>
-<p>favorites-page works!</p>
+
+<div *ngFor="let favorite of favorites">
+  <button>Remove Heart</button>
+  <p>{{ favorite.label }}</p>
+  <img src="{{ favorite.image }}" alt="Food Image" />
+</div>

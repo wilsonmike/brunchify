@@ -61,4 +61,7 @@ export class RecipeListComponent implements OnInit {
     console.log(term);
     console.log(cal);
   };
+  toggleFavorite = (favorite: Recipe): void => {
+    this.recipeService.editFavorites(favorite);
+  };
 }

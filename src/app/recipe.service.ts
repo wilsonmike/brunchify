@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_KEY, APP_ID } from './keys';
-import { Recipe, Hit, RecipeResponse } from './interfaces/recipe';
+import { Recipe, Hit, RecipeResponse, Favorite } from './interfaces/recipe';
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
   edamamBaseUrl = 'https://api.edamam.com/search';
-
+  favorites: Favorite[] = [];
   constructor(private http: HttpClient) {}
 
   getRecipes = (): any => {
@@ -28,5 +28,19 @@ export class RecipeService {
         calories: `0-${calories}`,
       },
     });
+  };
+  editFavorites = (favorite: Recipe): void => {
+    let index = this.favorites.findIndex((item) => {
+      return item.uri === favorite.uri;
+    });
+    if (index === -1) {
+      this.favorites.push(favorite);
+    } else {
+      this.favorites.splice(index, 1);
+    }
+    console.log(this.favorites);
+  };
+  getFavorites = () => {
+    return this.favorites;
   };
 }
