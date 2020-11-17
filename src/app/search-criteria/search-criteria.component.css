@@ -25,30 +25,7 @@
   border-radius: 5px;
   height: 30px;
 }
-input:focus {
-  outline: none;
-  border: 2px solid #743ad5;
-  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-  border-width: 4pt;
-  border-image-slice: 1;
-}
-::-webkit-input-placeholder {
-  text-align: center;
-}
 
-:-moz-placeholder {
-  /* Firefox 18- */
-  text-align: center;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  text-align: center;
-}
-
-:-ms-input-placeholder {
-  text-align: center;
-}
 .get-recipes-btn {
   background: linear-gradient(to left, #743ad5, #d53a9d);
   color: white;
@@ -59,4 +36,37 @@ input:focus {
   border-radius: 25px;
   align-self: center;
   margin-top: 15px;
+}
+input[type="range"] {
+  width: 100%;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0.35em;
+  background: linear-gradient(to left, #743ad5, #d53a9d);
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  padding: 15px;
+  border: none;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-image: url("assets/egg (2).svg");
+  margin-top: -10px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+.slide {
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

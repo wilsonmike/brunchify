@@ -2,6 +2,7 @@
 <app-search-criteria (submitEvent)="search($event.searchTerm, $event.calories)">
 </app-search-criteria>
 <app-card
+  class="container"
   *ngFor="let recipe of recipeData?.hits"
   [recipeRef]="recipe"
 ></app-card>
