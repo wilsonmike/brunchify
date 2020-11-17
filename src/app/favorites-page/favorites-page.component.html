@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div *ngFor="let favorite of favorites">
-  <button>Remove Heart</button>
+  <button (click)="deleteFavorite(favorite)">Remove Heart</button>
   <p>{{ favorite.label }}</p>
   <img src="{{ favorite.image }}" alt="Food Image" />
 </div>

@@ -3,6 +3,7 @@ export interface Recipe {
   image: string;
   uri: string;
   favorite: boolean;
+  url: string;
 }
 export interface RecipeResponse {
   hits: Hit[];
@@ -16,4 +17,5 @@ export interface Favorite {
   image: string;
   uri: string;
   favorite: boolean;
+  url: string;
 }

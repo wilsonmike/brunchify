@@ -15,10 +15,16 @@ export class FavoritesPageComponent implements OnInit {
   ngOnInit(): void {
     this.favorites = this.recipeService.getFavorites();
   }
-
-  // deleteFavorite = (index: number) => {
-  //   if (this.favorites) {
-  //   }
-  //   console.log(this.favorites);
-  // };
+  index = 0;
+  deleteFavorite = (favorite: Favorite) => {
+    let index = this.favorites.findIndex((item) => {
+      return item.uri === favorite.uri;
+    });
+    console.log(index);
+    if (index != -1) {
+      this.favorites.splice(index, 1);
+      console.log(index);
+      console.log(this.favorites);
+    }
+  };
 }

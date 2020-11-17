@@ -1,14 +1,28 @@
 <div class="recipe">
   <div class="recipe-card">
-    <button (click)="toggleFavorite(recipeRef.recipe)">Heart</button>
+    <img
+      [ngClass]="{ active: isFavorite }"
+      class="heart"
+      (click)="toggleFavorite(recipeRef.recipe)"
+      src="assets/love.svg"
+      alt=""
+    />
     <p class="recipe-title">{{ recipeRef.recipe.label }}</p>
-    <img src="{{ recipeRef.recipe.image }}" alt="Food Image" />
-    <p>
+    <img
+      [hidden]="isShow"
+      class="food-img"
+      src="{{ recipeRef.recipe.image }}"
+      alt="Food Image"
+    />
+    <p [hidden]="!isShow">
       {{ recipeRef.recipe.ingredientLines }}
+      <a class="recipe-link" href="{{ recipeRef.recipe.url }}"
+        >Link To Full Recipe</a
+      >
     </p>
     <p>{{ roundCalories() }} calories per serving</p>
 
-    <button class="recipe-show">
+    <button (click)="toggleDisplay($event)" class="recipe-show">
       <img class="shopping-icon" src="assets/shopping-list.svg" alt="" /> Get
       Recipe
     </button>

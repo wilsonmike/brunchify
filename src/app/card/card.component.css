@@ -6,7 +6,7 @@
   padding: 10px;
   margin: 20px;
 }
-.recipe img {
+.food-img {
   height: 200px;
   width: 200px;
 }
@@ -29,8 +29,19 @@
 .recipe-show:active:focus {
   border: none;
 }
-
 .recipe-show img {
   height: 15px;
   width: 15px;
+}
+.heart {
+  height: 25px;
+  width: 25px;
+}
+.recipe-link {
+  background: -webkit-linear-gradient(#743ad5, #d53a9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.active {
+  display: none;
 }
