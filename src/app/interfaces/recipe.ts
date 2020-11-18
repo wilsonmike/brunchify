@@ -4,6 +4,8 @@ export interface Recipe {
   uri: string;
   favorite: boolean;
   url: string;
+  ingredientLines: string;
+  totalTime: number;
 }
 export interface RecipeResponse {
   hits: Hit[];
@@ -18,4 +20,6 @@ export interface Favorite {
   uri: string;
   favorite: boolean;
   url: string;
+  ingredientLines: string;
+  totalTime: number;
 }

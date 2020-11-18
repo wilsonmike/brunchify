@@ -13,10 +13,31 @@
 }
 .favorite-container {
   text-align: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 2rem;
+  display: flex;
   padding: 10px;
   margin: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.img-label-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: auto 0;
+  justify-content: center;
+  align-items: center;
+}
+.recipe-book {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto 0;
+}
+.favorite-book {
+  height: 40px;
+  width: 40px;
+}
+.bolder {
+  font-size: 18px;
+  font-weight: bold;
 }

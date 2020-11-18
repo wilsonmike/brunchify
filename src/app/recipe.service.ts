@@ -40,7 +40,7 @@ export class RecipeService {
       },
     });
   };
-  editFavorites = (favorite: Recipe): void => {
+  editFavorites = (favorite: Favorite): void => {
     let index = this.favorites.findIndex((item) => {
       return item.uri === favorite.uri;
     });

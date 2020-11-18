@@ -14,13 +14,25 @@
       src="{{ recipeRef.recipe.image }}"
       alt="Food Image"
     />
-    <p [hidden]="!isShow">
-      {{ recipeRef.recipe.ingredientLines }}
+    <div [hidden]="!isShow">
+      <div
+        *ngFor="
+          let item of recipeRef.recipe.ingredientLines;
+          let lastItem = last
+        "
+        [hidden]="!isShow"
+      >
+        <span>{{ item }}</span
+        ><span *ngIf="!lastItem">,</span>
+      </div>
       <a class="recipe-link" href="{{ recipeRef.recipe.url }}" target="_blank"
         >Link To Full Recipe</a
       >
+    </div>
+    <p class="calories">
+      <img class="burn-icon" src="assets/burn.svg" alt="" />
+      {{ roundCalories() }} calories per serving
     </p>
-    <p>{{ roundCalories() }} calories per serving</p>
 
     <button (click)="toggleDisplay($event)" class="recipe-show">
       <img class="shopping-icon" src="assets/shopping-list.svg" alt="" /> Get

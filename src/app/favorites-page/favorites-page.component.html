@@ -7,11 +7,19 @@
     src="assets/goodbroken.svg"
     alt="Broken Heart"
   />
-  <div>
-    <p>{{ favorite.label }}</p>
+  <div class="img-label-container">
+    <p class="bolder">{{ favorite.label }}</p>
+    <img class="food-img" src="{{ favorite.image }}" alt="Food Image" />
     <a class="recipe-link" href="{{ favorite.url }}" target="_blank"
       >Link To Full Recipe</a
     >
-    <img class="food-img" src="{{ favorite.image }}" alt="Food Image" />
+  </div>
+  <div class="recipe-book">
+    <img class="favorite-book" src="assets/favoritebook.svg" alt="Food Book" />
+    <p class="bolder">Ingredients:</p>
+    <div *ngFor="let item of favorite.ingredientLines; let lastItem = last">
+      <span>{{ item }}</span
+      ><span *ngIf="!lastItem">,</span>
+    </div>
   </div>
 </div>

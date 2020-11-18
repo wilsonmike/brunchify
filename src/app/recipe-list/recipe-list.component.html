@@ -3,9 +3,13 @@
   (submitEvent)="search($event.searchTerm, $event.calories, $event.diet)"
 >
 </app-search-criteria>
-<app-card
-  *ngFor="let recipe of recipeData?.hits"
-  [recipeRef]="recipe"
-  (heartEvent)="toggleFavorite($event)"
-></app-card>
+<div class="app-card-container">
+  <app-card
+    *ngFor="let recipe of recipeData?.hits"
+    [recipeRef]="recipe"
+    (heartEvent)="toggleFavorite($event)"
+    class="card-master"
+  ></app-card>
+</div>
+
 <app-footer></app-footer>

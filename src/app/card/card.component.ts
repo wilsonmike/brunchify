@@ -34,6 +34,8 @@ export class CardComponent implements OnInit {
       uri: recipe.uri,
       favorite: true,
       url: recipe.url,
+      ingredientLines: recipe.ingredientLines,
+      totalTime: recipe.totalTime,
     };
     this.heartEvent.emit(favorite);
     console.log(favorite);
@@ -57,4 +59,6 @@ export class CardComponent implements OnInit {
     }
     console.log(index);
   }
+  // ingredients = document.querySelector('.recipe-paragraph');
+  // completeList = this.ingredients.split(",").join("\n");
 }
