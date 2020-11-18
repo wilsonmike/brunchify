@@ -40,6 +40,15 @@ export class CardComponent implements OnInit {
     this.isFavorite = true;
   };
   isShow = false;
+
+  toggleFave = () => {
+    if (this.recipeRef === this.isFavorite) {
+      this.isFavorite = !this.isShow;
+    } else {
+      this.isShow = this.isShow;
+    }
+  };
+
   toggleDisplay(index: number) {
     if (index === index) {
       this.isShow = !this.isShow;
