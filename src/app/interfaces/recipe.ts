@@ -13,6 +13,7 @@ export interface RecipeResponse {
 export interface Hit {
   bookmarked: boolean;
   recipe: Recipe;
+  to: 30;
 }
 export interface Favorite {
   label: string;

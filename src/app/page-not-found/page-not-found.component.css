@@ -5,8 +5,8 @@
 .center {
   font-size: 35px;
   position: absolute;
-  top: 15%;
-  left: 50%;
+  top: 10%;
+  left: 35%;
   transform: translate(-50%, -50%);
 }
 .bg {
