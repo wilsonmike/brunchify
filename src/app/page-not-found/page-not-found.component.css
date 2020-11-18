@@ -1,0 +1,15 @@
+.page-not-found {
+  position: relative;
+  text-align: center;
+}
+.center {
+  font-size: 35px;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bg {
+  width: 100vw;
+  height: 100vh;
+}
