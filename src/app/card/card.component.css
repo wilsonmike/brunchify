@@ -27,6 +27,7 @@
 .recipe-title {
   font-size: 14px;
   font-weight: bold;
+  padding: 10px 0px;
 }
 .recipe-show {
   background: linear-gradient(to left, #743ad5, #d53a9d);

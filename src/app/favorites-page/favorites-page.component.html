@@ -8,11 +8,21 @@
     alt="Broken Heart"
   />
   <div class="img-label-container">
-    <p class="bolder">{{ favorite.label }}</p>
+    <p class="bolder p-padded">{{ favorite.label }}</p>
     <img class="food-img" src="{{ favorite.image }}" alt="Food Image" />
     <a class="recipe-link" href="{{ favorite.url }}" target="_blank"
       >Link To Full Recipe</a
     >
+    <div>
+      <a
+        href="mailto:?subject=Check out this brunch recipe&amp;body=Check out this site {{
+          favorite.url
+        }}."
+        title="Share by Email"
+      >
+        <img class="email-icon" src="/assets/message.svg" alt="email icon" />
+      </a>
+    </div>
   </div>
   <div class="recipe-book">
     <img class="favorite-book" src="assets/favoritebook.svg" alt="Food Book" />
@@ -21,5 +31,6 @@
       <span>{{ item }}</span
       ><span *ngIf="!lastItem">,</span>
     </div>
+    <p>Total cook time: {{ favorite.totalTime }} minutes</p>
   </div>
 </div>

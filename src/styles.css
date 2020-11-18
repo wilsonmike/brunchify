@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 header,
 ul,
-body {
+body,
+p {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
+}
+.p-padded {
+  padding: 15px 0px;
 }
