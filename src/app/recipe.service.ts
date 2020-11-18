@@ -19,12 +19,23 @@ export class RecipeService {
       },
     });
   };
-  getRecipeSearch = (term: string, calories: string) => {
+  getRecipeSearch = (term: string, calories: string, diet: string) => {
     return this.http.get(this.edamamBaseUrl, {
       params: {
         app_key: API_KEY,
         app_id: APP_ID,
-        q: 'brunch ' + term,
+        q: term,
+        calories: `0-${calories}`,
+        diet: diet,
+      },
+    });
+  };
+  cleanRecipeSearch = (term: string, calories: string) => {
+    return this.http.get(this.edamamBaseUrl, {
+      params: {
+        app_key: API_KEY,
+        app_id: APP_ID,
+        q: term,
         calories: `0-${calories}`,
       },
     });

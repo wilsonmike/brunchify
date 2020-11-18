@@ -24,15 +24,22 @@ export class RecipeListComponent implements OnInit {
       console.log(queryParams);
       let calories = queryParams.get('calories');
       let term = queryParams.get('term');
-
+      let diet = queryParams.get('diet');
       if (queryParams.get('term') === null) {
         this.recipeService.getRecipes().subscribe((response) => {
           this.recipeData = response;
           console.log(this.recipeData);
         });
+      } else if (diet === '') {
+        this.recipeService
+          .cleanRecipeSearch(term, calories)
+          .subscribe((response) => {
+            this.recipeData = response;
+            console.log(this.recipeData);
+          });
       } else {
         this.recipeService
-          .getRecipeSearch(term, calories)
+          .getRecipeSearch(term, calories, diet)
           .subscribe((response) => {
             this.recipeData = response;
             console.log(this.recipeData);
@@ -51,15 +58,17 @@ export class RecipeListComponent implements OnInit {
   //     });
   // }
 
-  search = (term: string, cal: string) => {
+  search = (term: string, cal: string, diet: string) => {
     this.router.navigate([`/recipe-list`], {
       queryParams: {
         term: term,
         calories: cal,
+        diet: diet,
       },
     });
     console.log(term);
     console.log(cal);
+    console.log(diet);
   };
   toggleFavorite = (favorite: Recipe): void => {
     this.recipeService.editFavorites(favorite);

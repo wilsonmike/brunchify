@@ -15,5 +15,6 @@ export class SearchCriteriaComponent implements OnInit {
   getSearchTerm = (form: NgForm): void => {
     this.submitEvent.emit(form.value);
     // this.submitEvent.emit(form.value.calories);
+    console.log(form.value);
   };
 }

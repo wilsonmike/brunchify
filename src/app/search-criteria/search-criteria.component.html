@@ -2,7 +2,7 @@
   <form
     class="searchForm"
     #searchForm="ngForm"
-    (ngSubmit)="getSearchTerm(searchForm)"
+    (ngSubmit)="getSearchTerm(searchForm); searchForm.reset()"
   >
     <label for="searchTerm"></label>
     <input
@@ -24,36 +24,47 @@
     />
     <output></output>
     <p>Dietary Restrictions</p>
-    <div class="checkboxes">
+    <select class="select-style" name="diet" id="diet" ngModel>
+      <option value="balanced">Balanced</option>
+      <option value="high-fiber">High Fiber</option>
+      <option value="high-protein">High Protein</option>
+      <option value="low-carb">Low Carb</option>
+    </select>
+    <!-- <div class="checkboxes">
       <input
         type="checkbox"
-        id="dairy-free"
-        name="dairy-free"
-        value="dairy-free"
+        ng-model="checkbox"
+        ng-true-value="1"
+        ng-false-value="0"
+        name="balanced"
+        ngModel
       />
-      <label for="dairy-free">Dairy Free</label><br />
+      <label for="balanced">Balanced</label><br />
       <input
         type="checkbox"
-        id="gluten-free"
-        name="gluten-free"
-        value="gluten-free"
+        ng-checked="high-fiber"
+        id="highFiber"
+        name="highFiber"
+        ngModel
       />
-      <label for="gluten-free">Gluten Free</label><br />
+      <label for="highFiber">High Fiber</label><br />
       <input
         type="checkbox"
-        id="high-protein"
-        name="high-protein"
-        value="high-protein"
+        ng-checked="high-protein"
+        id="highProtein"
+        name="highProtein"
+        ngModel
       />
-      <label for="high-protein">High Protein</label><br />
+      <label for="highProtein">High Protein</label><br />
       <input
         type="checkbox"
-        id="vegetarian"
-        name="vegetarian"
-        value="vegetarian"
+        ng-checked="low-carb"
+        id="lowCarb"
+        name="lowCarb"
+        ngModel
       />
-      <label for="vegetarian">Vegetarian</label><br />
-    </div>
+      <label for="lowCarb">Low Carb</label><br />
+    </div> -->
     <button class="get-recipes-btn">Get Recipes</button>
   </form>
 </div>
