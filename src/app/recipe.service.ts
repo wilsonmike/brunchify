@@ -30,13 +30,12 @@ export class RecipeService {
       },
     });
   };
-  cleanRecipeSearch = (term: string, calories: string) => {
+  cleanRecipeSearch = (term: string) => {
     return this.http.get(this.edamamBaseUrl, {
       params: {
         app_key: API_KEY,
         app_id: APP_ID,
         q: term,
-        calories: `0-${calories}`,
       },
     });
   };

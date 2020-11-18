@@ -30,13 +30,11 @@ export class RecipeListComponent implements OnInit {
           this.recipeData = response;
           console.log(this.recipeData);
         });
-      } else if (diet === '') {
-        this.recipeService
-          .cleanRecipeSearch(term, calories)
-          .subscribe((response) => {
-            this.recipeData = response;
-            console.log(this.recipeData);
-          });
+      } else if (diet === '' || diet === null || calories === null) {
+        this.recipeService.cleanRecipeSearch(term).subscribe((response) => {
+          this.recipeData = response;
+          console.log(this.recipeData);
+        });
       } else {
         this.recipeService
           .getRecipeSearch(term, calories, diet)

@@ -14,7 +14,7 @@
       src="{{ recipeRef.recipe.image }}"
       alt="Food Image"
     />
-    <div class="show-purple-border" [hidden]="!isShow">
+    <div [hidden]="!isShow">
       <div
         *ngFor="
           let item of recipeRef.recipe.ingredientLines;

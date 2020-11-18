@@ -52,6 +52,11 @@
   height: 25px;
   width: 25px;
 }
+.heart:hover {
+  transition: 0.5s;
+  clip-path: circle(100%);
+  transform: rotate(360deg);
+}
 .recipe-link {
   background: -webkit-linear-gradient(#743ad5, #d53a9d);
   -webkit-background-clip: text;
