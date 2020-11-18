@@ -27,4 +27,13 @@ export class FavoritesPageComponent implements OnInit {
       console.log(this.favorites);
     }
   };
+  isShow = false;
+  toggleDisplay(index: number) {
+    if (index === index) {
+      this.isShow = !this.isShow;
+    } else {
+      this.isShow = this.isShow;
+    }
+    console.log(index);
+  }
 }
