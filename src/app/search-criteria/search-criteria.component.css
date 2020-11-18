@@ -70,3 +70,10 @@ input[type="range"]:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.select-style {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border-width: 5pt;
+  border-image-slice: 1;
+  border-radius: 5px;
+  height: 30px;
+}
